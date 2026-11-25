@@ -1,0 +1,135 @@
+/* STATISTIKA — Indonesia in Numbers. One stylesheet, system fonts only,
+   no network. Paper background, ink text, deep green + amber accents. */
+
+:root {
+  --paper: #f7f4ec;
+  --card: #fffdf6;
+  --ink: #1c2b26;
+  --muted: #5d6f67;
+  --line: #ddd6c4;
+  --green: #0e6b4f;
+  --green-dark: #0a4d38;
+  --amber: #c47f12;
+  --red: #b3402a;
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+a { color: var(--green); }
+a:hover { color: var(--green-dark); }
+
+/* Masthead */
+.masthead { background: var(--green-dark); color: #f7f4ec; }
+.mast-in { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; padding-top: 12px; padding-bottom: 12px; }
+.brand { color: #f7f4ec; text-decoration: none; font: 700 20px/1 Georgia, "Times New Roman", serif; letter-spacing: 0.12em; display: flex; align-items: center; gap: 10px; }
+.brand:hover { color: #f7f4ec; }
+.mark { display: inline-flex; align-items: flex-end; gap: 2px; height: 18px; }
+.mark i { display: block; width: 5px; background: #f0b23e; }
+.mark i:nth-child(1) { height: 8px; }
+.mark i:nth-child(2) { height: 13px; }
+.mark i:nth-child(3) { height: 18px; }
+nav { display: flex; flex-wrap: wrap; gap: 2px; }
+nav a { color: #cfe3d8; text-decoration: none; font-size: 14px; padding: 6px 10px; border-radius: 8px; }
+nav a:hover { color: #fff; background: rgba(255, 255, 255, 0.12); }
+nav a.active { color: #fff; background: var(--green); }
+
+/* Hero + page heads */
+.hero { padding: 44px 0 8px; }
+.kicker { margin: 0 0 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); }
+h1 { font: 700 52px/1.05 Georgia, "Times New Roman", serif; margin: 0 0 14px; letter-spacing: -0.01em; }
+.lede { font-size: 19px; line-height: 1.5; color: #33463e; max-width: 720px; margin: 0 0 18px; }
+.page-head { padding: 36px 0 4px; }
+.page-head h1 { font-size: 44px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 26px; }
+.chips a { display: inline-block; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; font-size: 14px; text-decoration: none; color: var(--ink); }
+.chips a:hover { border-color: var(--green); color: var(--green); }
+
+/* Cards + grids */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 8px 0 24px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 0 0 24px; }
+.card, .panel, .stat { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
+.card { padding: 18px; display: flex; flex-direction: column; }
+.card-top { display: flex; justify-content: space-between; align-items: baseline; }
+.card-label { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); }
+.card-year { font-size: 13px; color: var(--muted); }
+.card-value { font: 700 40px/1.1 Georgia, "Times New Roman", serif; margin: 10px 0 2px; }
+.card-unit { font-size: 14px; color: var(--muted); }
+.spark { width: 100%; margin: 10px 0 4px; }
+.card-blurb { font-size: 14px; color: #33463e; margin: 6px 0 8px; flex: 1; }
+.card-link { font-size: 14px; font-weight: 600; text-decoration: none; }
+.src { font-size: 12px; color: var(--muted); margin: 4px 0 0; }
+
+/* Panels, stats, facts */
+.panel { padding: 22px; margin: 0 0 24px; }
+.panel h2 { font: 700 24px/1.2 Georgia, "Times New Roman", serif; margin: 0 0 12px; }
+.panel-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+.panel-head h2 { margin-bottom: 0; }
+.note { font-size: 13px; color: var(--muted); margin: 10px 0 0; }
+.stat { padding: 18px; }
+.stat-label { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); }
+.stat-value { font: 700 34px/1.15 Georgia, "Times New Roman", serif; margin: 8px 0 2px; }
+.stat-unit { font-size: 14px; color: var(--muted); }
+.stat-note { font-size: 14px; color: #33463e; margin: 8px 0 0; }
+.facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.facts div { border-left: 3px solid var(--amber); padding-left: 12px; }
+.facts strong { display: block; font: 700 26px/1.2 Georgia, serif; }
+.facts span { font-size: 13px; color: var(--muted); }
+.changes { margin: 0; padding-left: 20px; }
+.changes li { margin: 8px 0; }
+.chart { width: 100%; display: block; }
+
+/* Controls */
+.controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 14px; }
+.controls.big { margin-bottom: 16px; }
+.controls label { display: flex; align-items: center; gap: 6px; color: var(--muted); }
+select, input[type="search"] {
+  font: inherit; font-size: 14px; color: var(--ink);
+  background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 6px 9px;
+}
+input[type="search"] { min-width: 190px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button {
+  font: inherit; font-size: 13px; background: #fff; border: 0; padding: 6px 12px; cursor: pointer; color: var(--ink);
+}
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button.on { background: var(--green); color: #fff; }
+
+/* Tables */
+.tbl-wrap { overflow-x: auto; }
+table.tbl { width: 100%; border-collapse: collapse; font-size: 15px; }
+.tbl th, .tbl td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); }
+.tbl th { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.tbl .num { text-align: right; font-variant-numeric: tabular-nums; }
+.tbl tbody tr:hover { background: #f3efe2; }
+.up { color: var(--green); font-weight: 700; }
+.down { color: var(--red); font-weight: 700; }
+.detail { background: #eef3ec; border: 1px solid #cfe0d2; border-radius: 10px; padding: 14px 16px; margin-top: 14px; }
+.detail h3 { margin: 0 0 4px; font: 700 20px Georgia, serif; }
+.detail p { margin: 0; }
+
+/* Footer */
+footer { border-top: 1px solid var(--line); margin-top: 24px; padding: 22px 0 34px; font-size: 13px; color: var(--muted); }
+footer p { max-width: 760px; }
+
+/* Phone layout */
+@media (max-width: 720px) {
+  body { font-size: 15px; }
+  h1 { font-size: 38px; }
+  .page-head h1 { font-size: 32px; }
+  .lede { font-size: 17px; }
+  .grid, .grid3 { grid-template-columns: 1fr; }
+  .facts { grid-template-columns: 1fr 1fr; }
+  .mast-in { gap: 10px; }
+  nav a { padding: 5px 7px; font-size: 13px; }
+  .panel { padding: 16px; }
+  .card-value { font-size: 34px; }
+  .hero { padding-top: 28px; }
+}
